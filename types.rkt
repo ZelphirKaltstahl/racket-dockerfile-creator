@@ -9,7 +9,8 @@
      'ubuntu:16.04))
 
 (define-type DockerItemType
-  (U 'FROM
+  (U 'COMMENT
+     'FROM
      'MAINTAINER
      'CMD
      'RUN
@@ -25,8 +26,7 @@
   ([base-image : BaseImage]
    [type : DockerItemType]
    [command : String]
-   [ignore-failure : Boolean]
-   [dependencies : (Listof (U BasicDockerItem MetaDockerItem))]))
+   [ignore-failure : Boolean]))
 
 (struct MetaDockerItem
   ([base-image : BaseImage]
